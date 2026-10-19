@@ -1,0 +1,8 @@
+[project]
+name = "tardis-railway-insights"
+version = "1.0.0"
+description = "Reproducible monthly SNCF route delay analysis and forecasting"
+requires-python = ">=3.12,<3.13"
+
+[tool.ruff]
+line-length = 120

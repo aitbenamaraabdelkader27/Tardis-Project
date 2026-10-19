@@ -1,0 +1,310 @@
+{
+  "publisher": "SNCF Voyageurs",
+  "dataset": "regularite-mensuelle-tgv-aqst",
+  "source_url": "https://ressources.data.sncf.com/explore/dataset/regularite-mensuelle-tgv-aqst/",
+  "download_url": "https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/regularite-mensuelle-tgv-aqst/exports/csv?where=date+%3E%3D+%222018-01-01%22+and+date+%3C+%222026-01-01%22&order_by=date%2Cservice%2Cgare_depart%2Cgare_arrivee&use_labels=false&delimiter=%3B",
+  "retrieved_at": "2026-10-16T15:08:03.891417+00:00",
+  "license": "Open Database License (ODbL)",
+  "license_url": "https://data.sncf.com/pages/cgu/A1#A1",
+  "sha256_uncompressed": "91261eb93097a787e0fb29a7e70748cc6d0b3f940ec142273e03079e67ff263a",
+  "rows": 11818,
+  "period_start": "2018-01",
+  "period_end": "2025-12",
+  "fields": [
+    {
+      "name": "date",
+      "annotations": {
+        "timeserie_precision": "month",
+        "facet": true,
+        "timerangeFilter": true
+      },
+      "label": "Date",
+      "type": "date",
+      "description": null
+    },
+    {
+      "name": "service",
+      "description": "National / international",
+      "annotations": {
+        "facet": true,
+        "sortable": true
+      },
+      "label": "Service",
+      "type": "text"
+    },
+    {
+      "name": "gare_depart",
+      "annotations": {
+        "facet": true
+      },
+      "label": "Gare de départ",
+      "type": "text",
+      "description": null
+    },
+    {
+      "name": "gare_arrivee",
+      "annotations": {
+        "facet": true
+      },
+      "label": "Gare d'arrivée",
+      "type": "text",
+      "description": null
+    },
+    {
+      "name": "duree_moyenne",
+      "description": "Durée moyenne prévue du trajet, en min",
+      "annotations": {
+        "facetsort": "-count",
+        "unit": "minutes"
+      },
+      "label": "Durée moyenne du trajet",
+      "type": "int"
+    },
+    {
+      "name": "nb_train_prevu",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre de circulations prévues",
+      "type": "int",
+      "description": null
+    },
+    {
+      "name": "nb_annulation",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre de trains annulés",
+      "type": "int",
+      "description": null
+    },
+    {
+      "name": "commentaire_annulation",
+      "description": "Facultatif",
+      "label": "Commentaire annulations",
+      "type": "text",
+      "annotations": {}
+    },
+    {
+      "name": "nb_train_depart_retard",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre de trains en retard au départ",
+      "type": "int",
+      "description": null
+    },
+    {
+      "name": "retard_moyen_depart",
+      "description": "En min",
+      "annotations": {
+        "unit": "minutes",
+        "facetsort": "-count",
+        "decimals": 0
+      },
+      "label": "Retard moyen des trains en retard au départ",
+      "type": "double"
+    },
+    {
+      "name": "retard_moyen_tous_trains_depart",
+      "description": "Retard moyen de tous les trains au départ, en min",
+      "annotations": {
+        "unit": "minutes",
+        "facetsort": "-count",
+        "decimals": 0
+      },
+      "label": "Retard moyen de tous les trains au départ",
+      "type": "double"
+    },
+    {
+      "name": "commentaire_retards_depart",
+      "description": "Facultatif",
+      "label": "Commentaire retards au départ",
+      "type": "text",
+      "annotations": {}
+    },
+    {
+      "name": "nb_train_retard_arrivee",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre de trains en retard à l'arrivée",
+      "type": "int",
+      "description": null
+    },
+    {
+      "name": "retard_moyen_arrivee",
+      "description": "Retard moyen des trains en retard à l'arrivée, en min",
+      "annotations": {
+        "unit": "minutes",
+        "facetsort": "-count",
+        "decimals": 0
+      },
+      "label": "Retard moyen des trains en retard à l'arrivée",
+      "type": "double"
+    },
+    {
+      "name": "retard_moyen_tous_trains_arrivee",
+      "description": "En min",
+      "annotations": {
+        "unit": "minutes",
+        "facetsort": "-count",
+        "decimals": 0
+      },
+      "label": "Retard moyen de tous les trains à l'arrivée",
+      "type": "double"
+    },
+    {
+      "name": "commentaires_retard_arrivee",
+      "description": "Facultatif",
+      "label": "Commentaire retards à l'arrivée",
+      "type": "text",
+      "annotations": {}
+    },
+    {
+      "name": "nb_train_retard_sup_15",
+      "description": "Nombre de trains en retard supérieur à 15min (si liaison concurrencée par vol)",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre trains en retard > 15min",
+      "type": "int"
+    },
+    {
+      "name": "retard_moyen_trains_retard_sup15",
+      "description": "Retard moyen (en min) des trains en retard supérieur à 15min (si liaison concurrencée par vol)",
+      "annotations": {
+        "unit": "minutes",
+        "facetsort": "-count",
+        "decimals": 0
+      },
+      "label": "Retard moyen trains en retard > 15 (si liaison concurrencée par vol)",
+      "type": "double"
+    },
+    {
+      "name": "nb_train_retard_sup_30",
+      "description": "Nombre de trains en retard supérieur à 30 min",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre trains en retard > 30min",
+      "type": "int"
+    },
+    {
+      "name": "nb_train_retard_sup_60",
+      "description": "Nombre de trains en retard supérieur à 60 min",
+      "annotations": {
+        "facetsort": "-count"
+      },
+      "label": "Nombre trains en retard > 60min",
+      "type": "int"
+    },
+    {
+      "name": "prct_cause_externe",
+      "description": "Pourcentage de trains en retard pour causes externes (météo, obstacles, colis suspects, malveillance, mouvements sociaux, etc.)",
+      "annotations": {
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour causes externes",
+      "type": "double"
+    },
+    {
+      "name": "prct_cause_infra",
+      "description": "Pourcentage de trains en retard pour cause infrastructure ferroviaire (maintenance, travaux)",
+      "annotations": {
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour cause infrastructure",
+      "type": "double"
+    },
+    {
+      "name": "prct_cause_gestion_trafic",
+      "description": "Pourcentage de trains en retard pour cause gestion du trafic % trains en retard pour cause de gestion trafic (circulation sur ligne ferroviaire, interactions réseaux)",
+      "annotations": {
+        "facetsort": "-count",
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour cause gestion trafic",
+      "type": "double"
+    },
+    {
+      "name": "prct_cause_materiel_roulant",
+      "description": "Pourcentage de trains en retard pour cause matériel roulant",
+      "annotations": {
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour cause matériel roulant",
+      "type": "double"
+    },
+    {
+      "name": "prct_cause_gestion_gare",
+      "description": "Pourcentage de trains en retard pour cause de gestion en gare et réutilisation de matériel",
+      "annotations": {
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour cause gestion en gare et réutilisation de matériel",
+      "type": "double"
+    },
+    {
+      "name": "prct_cause_prise_en_charge_voyageurs",
+      "description": "Pourcentage de trains en retard pour cause de prise en compte voyageurs (affluence, gestions PSH, correspondances)",
+      "annotations": {
+        "unit": "%",
+        "decimals": 1
+      },
+      "label": "Prct retard pour cause prise en compte voyageurs (affluence, gestions PSH, correspondances)",
+      "type": "double"
+    }
+  ],
+  "source_metadata": {
+    "title": "Régularité mensuelle TGV par liaisons",
+    "description": "<p style=\"font-family: Avenir, Helvetica, Arial, sans-serif; margin-bottom: 1em; color: rgb(51, 51, 51); font-size: 14px;\"><span style=\"font-weight: bolder;\">Découvrez la régularité mensuelle TGV par liaisons (AQST).</span></p><p style=\"font-family: Avenir, Helvetica, Arial, sans-serif; margin-bottom: 1em; color: rgb(51, 51, 51); font-size: 14px;\">La régularité TGV tient compte des différentes durées de trajet des clients (aussi appelée composite).</p><ul style=\"color: rgb(51, 51, 51); font-family: Avenir, Helvetica, Arial, sans-serif; font-size: 14px;\"><li>Un train est considéré à l'heure si son retard au terminus est inférieur à <span style=\"font-weight: bolder;\">5min</span> pour un parcours inférieur à <span style=\"font-weight: bolder;\">1h30</span></li></ul><ul style=\"color: rgb(51, 51, 51); font-family: Avenir, Helvetica, Arial, sans-serif; font-size: 14px;\"><li>Un train est considéré à l'heure si son retard au terminus est inférieur à <span style=\"font-weight: bolder;\">10min</span> pour un parcours entre <span style=\"font-weight: bolder;\">1h30 et 3h</span></li></ul><ul style=\"color: rgb(51, 51, 51); font-family: Avenir, Helvetica, Arial, sans-serif; font-size: 14px;\"><li>Un train est considéré à l'heure si son retard au terminus est inférieur à <span style=\"font-weight: bolder;\">15min</span> pour un parcours au-delà de <span style=\"font-weight: bolder;\">3h</span></li></ul><p style=\"font-family: Avenir, Helvetica, Arial, sans-serif; margin-bottom: 0px; color: rgb(51, 51, 51); font-size: 14px;\">Les horaires d'arrivée sont également déterminés par des capteurs détectant le passage du train à un point déterminé marquant l'entrée en gare et exceptionnellement par des suivis manuel. La précision des mesures est la minute arrondie à minute inférieure, ce qui est conforme à l'ensemble des normes retenues pour la confection des horaires et chronogrammes de service.</p><p style=\"font-family: Avenir, Helvetica, Arial, sans-serif; margin-bottom: 0px; color: rgb(51, 51, 51); font-size: 14px;\"><br>Le résultat de régularité global n’est ni la moyenne des résultats des 6 axes, ni la moyenne des résultats de l’ensemble des liaisons. En effet, le taux de régularité est le nombre de trains à l’heure à leur terminus sur le nombre de trains total ayant circulé sur le périmètre considéré. De plus, un même TGV peut compter dans plusieurs liaisons, mais il ne compte qu’une seule fois dans la régularité globale. <span style=\"font-weight: bolder;\">Les chiffres de ce jeu de données ne doivent donc pas être utilisés pour calculer une régularité globale TGV ou par axe.</span></p><p style=\"font-family: Avenir, Helvetica, Arial, sans-serif; margin-bottom: 0px; color: rgb(51, 51, 51); font-size: 14px;\"><span style=\"font-weight: bolder;\"><br></span><br>Pour consulter la <span style=\"font-weight: bolder;\">régularité mensuelle TGV globale, <a href=\"https://voyageurs-datasncf.opendatasoft.com/explore/dataset/regularite-mensuelle-tgv-globale/table/\" style=\"text-decoration: none; color: rgb(0, 136, 206);\" target=\"_blank\">cliquez ici</a>.</span><br>Pour consulter la <span style=\"font-weight: bolder;\">régularité mensuelle TGV par axe, <a href=\"https://voyageurs-datasncf.opendatasoft.com/explore/dataset/regularite-mensuelle-tgv-par-axe/table/\" style=\"text-decoration: none; color: rgb(0, 136, 206);\" target=\"_blank\">cliquez ici</a>.</span></p>",
+    "theme": [
+      "Qualité de service"
+    ],
+    "keyword": [
+      "Régularité",
+      "TGV",
+      "Retards",
+      "Horaires"
+    ],
+    "license": "Open Database License (ODbL)",
+    "license_url": "https://data.sncf.com/pages/cgu/A1#A1",
+    "language": "fr",
+    "modified": "2026-10-02T10:10:31+00:00",
+    "publisher": "SNCF Voyageurs",
+    "references": null,
+    "attributions": null,
+    "update_frequency": null,
+    "bbox": null,
+    "data_processed": "2026-10-02T10:10:31+00:00",
+    "federated": true,
+    "geographic_reference": [
+      "world_fr"
+    ],
+    "geographic_reference_auto": true,
+    "geometry_types": null,
+    "metadata_languages": [
+      "fr"
+    ],
+    "metadata_processed": "2026-10-16T04:30:12.120000+00:00",
+    "modified_updates_on_data_change": true,
+    "modified_updates_on_metadata_change": false,
+    "parent_domain": "datasncf",
+    "records_count": 12907,
+    "shared_catalog": null,
+    "source_dataset": null,
+    "source_domain": null,
+    "source_domain_address": null,
+    "source_domain_title": null,
+    "territory": [
+      "France"
+    ],
+    "timezone": null
+  }
+}

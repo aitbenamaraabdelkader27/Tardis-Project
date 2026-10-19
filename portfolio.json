@@ -1,0 +1,71 @@
+{
+  "title": "TARDIS · Railway Insights",
+  "description": "TARDIS explores historical SNCF railway data to analyse monthly arrival delays, compare machine learning forecasts and replay a validated route-average baseline through an interactive dashboard.",
+  "category": "Data Science / Machine Learning",
+  "year": 2026,
+  "project_context": "Collective EPITECH student project, followed by a reproducibility and dashboard refactor in October 2026.",
+  "stack": [
+    "Python 3.12",
+    "pandas",
+    "NumPy",
+    "scikit-learn",
+    "Random Forest",
+    "Streamlit",
+    "Plotly",
+    "joblib"
+  ],
+  "features": [
+    "Official SNCF snapshot with provenance and checksums",
+    "Interactive monthly route exploration",
+    "Chronological validation and baseline comparison",
+    "2025 forecast replay for training-supported routes",
+    "Measured model performance",
+    "Reproducible training and application tests"
+  ],
+  "dataset": {
+    "publisher": "SNCF Voyageurs",
+    "period": "2018-01 to 2025-12",
+    "source_rows": 11818,
+    "eligible_rows": 11745,
+    "license": "ODbL"
+  },
+  "results": {
+    "task": "Monthly route mean arrival delay regression, minutes",
+    "selection": "Lowest 2024 validation MAE",
+    "selected_model": "Route historical mean",
+    "test_year": 2025,
+    "test_rows": 1494,
+    "selected_test_MAE_minutes": 2.6863490537378683,
+    "selected_test_RMSE_minutes": 3.7945676063114315,
+    "selected_test_R2": 0.20891135078605183,
+    "random_forest_test_MAE_minutes": 2.569427805611206,
+    "global_mean_test_MAE_minutes": 3.202436467669309
+  },
+  "contribution": {
+    "original_work": "Team coursework; individual roles have not been verified.",
+    "refactor_scope": [
+      "Repository audit",
+      "Official data acquisition and quality reporting",
+      "Leakage-aware chronological evaluation",
+      "Saved pipeline and guarded inference",
+      "English Streamlit dashboard",
+      "Tests, documentation and deployment preparation"
+    ],
+    "personal_contribution": null,
+    "personal_contribution_status": "Owner must identify their actual team role and review the assisted refactor before making personal authorship claims."
+  },
+  "links": {
+    "original_team_repository": "https://github.com/EpitechBachelorPromo2028/B-DAT-200-PAR-2-1-tardis-8",
+    "github_repository": "https://github.com/aitbenamaraabdelkader27/Tardis-Project",
+    "live_dashboard": null
+  },
+  "publication_status": "Prepared locally; no push or deployment authorised or performed.",
+  "limitations": [
+    "Monthly aggregates, not individual trains",
+    "Selected baseline is constant across forecast months for a route",
+    "Frozen 2025 evaluation demo",
+    "Unresolved official source anomalies",
+    "Single test year",
+    "Collective-code publication rights require owner review"
+  ]
+}

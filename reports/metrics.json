@@ -1,0 +1,179 @@
+{
+  "task": "Monthly route mean arrival delay regression",
+  "unit": "minutes",
+  "features": [
+    "Date",
+    "Service",
+    "Gare de départ",
+    "Gare d'arrivée"
+  ],
+  "engineered_features": [
+    "Service",
+    "Gare de départ",
+    "Gare d'arrivée",
+    "Year",
+    "Month_sin",
+    "Month_cos"
+  ],
+  "seed": 42,
+  "selection_rule": "Lowest 2024 validation MAE; no test tuning",
+  "selected_model": "Route historical mean",
+  "validation": {
+    "Global mean": {
+      "MAE": 2.652939670764518,
+      "RMSE": 3.6330223446306276,
+      "R2": -0.01687399461641803
+    },
+    "Route historical mean": {
+      "MAE": 2.1943275938198004,
+      "RMSE": 3.198195176702057,
+      "R2": 0.21197330299314687
+    },
+    "Random Forest": {
+      "MAE": 2.495566059076163,
+      "RMSE": 3.407543298450311,
+      "R2": 0.10543115520669899
+    }
+  },
+  "test": {
+    "Global mean": {
+      "MAE": 3.202436467669309,
+      "RMSE": 4.497660628775964,
+      "R2": -0.11140904948107733
+    },
+    "Route historical mean": {
+      "MAE": 2.6863490537378683,
+      "RMSE": 3.7945676063114315,
+      "R2": 0.20891135078605183
+    },
+    "Random Forest": {
+      "MAE": 2.569427805611206,
+      "RMSE": 3.646803826080097,
+      "R2": 0.2693231178502177
+    }
+  },
+  "periods": {
+    "training": {
+      "start": "2018-01-01",
+      "end": "2023-12-01",
+      "rows": 8801
+    },
+    "validation": {
+      "start": "2024-01-01",
+      "end": "2024-12-01",
+      "rows": 1450
+    },
+    "artifact_training": {
+      "start": "2018-01-01",
+      "end": "2024-12-01",
+      "rows": 10251
+    },
+    "test": {
+      "start": "2025-01-01",
+      "end": "2025-12-01",
+      "rows": 1494
+    }
+  },
+  "quality": {
+    "raw_rows": 11818,
+    "eligible_rows": 11745,
+    "excluded_rows": 73,
+    "missing_by_column": {
+      "Date": 0,
+      "Service": 0,
+      "Gare de départ": 0,
+      "Gare d'arrivée": 0,
+      "Durée moyenne du trajet": 0,
+      "Nombre de circulations prévues": 0,
+      "Nombre de trains annulés": 0,
+      "Commentaire annulations": 11818,
+      "Nombre de trains en retard au départ": 0,
+      "Retard moyen des trains en retard au départ": 0,
+      "Retard moyen de tous les trains au départ": 0,
+      "Commentaire retards au départ": 11818,
+      "Nombre de trains en retard à l'arrivée": 0,
+      "Retard moyen des trains en retard à l'arrivée": 0,
+      "Retard moyen de tous les trains à l'arrivée": 0,
+      "Commentaire retards à l'arrivée": 11120,
+      "Nombre trains en retard > 15min": 0,
+      "Retard moyen trains en retard > 15 (si liaison concurrencée par vol)": 0,
+      "Nombre trains en retard > 30min": 0,
+      "Nombre trains en retard > 60min": 0,
+      "Prct retard pour causes externes": 0,
+      "Prct retard pour cause infrastructure": 0,
+      "Prct retard pour cause gestion trafic": 0,
+      "Prct retard pour cause matériel roulant": 0,
+      "Prct retard pour cause gestion en gare et réutilisation de matériel": 0,
+      "Prct retard pour cause prise en compte voyageurs (affluence, gestions PSH, correspondances)": 0,
+      "Year": 0,
+      "Month": 0
+    },
+    "dtypes": {
+      "Date": "datetime64[ns]",
+      "Service": "object",
+      "Gare de départ": "object",
+      "Gare d'arrivée": "object",
+      "Durée moyenne du trajet": "int64",
+      "Nombre de circulations prévues": "int64",
+      "Nombre de trains annulés": "int64",
+      "Commentaire annulations": "float64",
+      "Nombre de trains en retard au départ": "int64",
+      "Retard moyen des trains en retard au départ": "float64",
+      "Retard moyen de tous les trains au départ": "float64",
+      "Commentaire retards au départ": "float64",
+      "Nombre de trains en retard à l'arrivée": "int64",
+      "Retard moyen des trains en retard à l'arrivée": "float64",
+      "Retard moyen de tous les trains à l'arrivée": "float64",
+      "Commentaire retards à l'arrivée": "object",
+      "Nombre trains en retard > 15min": "int64",
+      "Retard moyen trains en retard > 15 (si liaison concurrencée par vol)": "float64",
+      "Nombre trains en retard > 30min": "int64",
+      "Nombre trains en retard > 60min": "int64",
+      "Prct retard pour causes externes": "float64",
+      "Prct retard pour cause infrastructure": "float64",
+      "Prct retard pour cause gestion trafic": "float64",
+      "Prct retard pour cause matériel roulant": "float64",
+      "Prct retard pour cause gestion en gare et réutilisation de matériel": "float64",
+      "Prct retard pour cause prise en compte voyageurs (affluence, gestions PSH, correspondances)": "float64",
+      "Year": "int32",
+      "Month": "int32"
+    },
+    "duplicate_route_months": 0,
+    "negative_target_rows": 119,
+    "target_below_minus_30_min": 9,
+    "negative_count_cells": 43,
+    "policy": "Exclude missing identity/target and no operated trains. Retain signed delays, including source anomalies. Never clip targets or impute outcomes."
+  },
+  "dataset_sha256": "03c9d2bbef219e0e8cea746d606ad85a1bb73978edcdbd9aaf6ab90550cf69e7",
+  "model_sha256": "18aeb61d53b0dbb7130ab4a5ac173dfa62ef123efe2453e2923016fe976b5706",
+  "routes_sha256": "aed05c1ca0bed040a642bdb58ae3b715d1a459aacb28f865121d13d20ff97913",
+  "predictions_sha256": "2e0b96ea0c2522268b1ffda3aef384c9b64915adfd1d3e6e113b78d485f8d684",
+  "versions": {
+    "pandas": "2.3.3",
+    "numpy": "2.4.2",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3"
+  },
+  "random_forest_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": 14,
+    "max_features": 0.8,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 5,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 160,
+    "n_jobs": 1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "test_unseen_routes": 48,
+  "test_target_negative_rows": 4
+}
